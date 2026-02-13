@@ -29,6 +29,13 @@ export const useSettingsStore = defineStore("settings", () => {
   const carbsTarget = computed(() => Number(getSetting("carbs_target", "250")));
   const fatTarget = computed(() => Number(getSetting("fat_target", "65")));
   const unitSystem = computed(() => getSetting("unit_system", "metric"));
+  const onboardingCompleted = computed(() => getSetting("onboarding_completed") === "true");
+  const goalType = computed(() => getSetting("goal_type"));
+  const currentWeight = computed(() => getSetting("current_weight"));
+  const targetWeight = computed(() => getSetting("target_weight"));
+  const trainingFrequency = computed(() => getSetting("training_frequency"));
+  const focusAreas = computed(() => getSetting("focus_areas"));
+  const experienceLevel = computed(() => getSetting("experience_level"));
 
-  return { settings, loading, fetchSettings, updateSetting, getSetting, calorieTarget, proteinTarget, carbsTarget, fatTarget, unitSystem };
+  return { settings, loading, fetchSettings, updateSetting, getSetting, calorieTarget, proteinTarget, carbsTarget, fatTarget, unitSystem, onboardingCompleted, goalType, currentWeight, targetWeight, trainingFrequency, focusAreas, experienceLevel };
 });

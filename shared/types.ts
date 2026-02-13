@@ -162,7 +162,15 @@ export interface Setting {
   value: string;
 }
 
-export type SettingKey = "calorie_target" | "protein_target" | "carbs_target" | "fat_target" | "unit_system";
+export type SettingKey =
+  | "calorie_target" | "protein_target" | "carbs_target" | "fat_target"
+  | "unit_system"
+  | "onboarding_completed"
+  | "current_weight" | "target_weight"
+  | "goal_type"
+  | "training_frequency"
+  | "focus_areas"
+  | "experience_level";
 
 // ── WebSocket Events ──
 export type WSEventType =
