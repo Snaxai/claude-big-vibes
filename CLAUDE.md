@@ -82,6 +82,7 @@ shared/
 
 ## Git
 - Use `git add .` when staging, unless told otherwise.
+- "commit this" = `git add . && git commit` with a short message. No need to check status/diff/log first.
 
 ## Development Workflow
 
