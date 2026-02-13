@@ -8,8 +8,8 @@
     "dev:web": "bun run --filter web dev",
     "ports": "lsof -i :3001 -i :5173 || echo 'No processes running on ports 3001 or 5173'",
     "kill": "lsof -ti :3001 -ti :5173 | xargs kill 2>/dev/null && echo 'Killed processes on ports 3001 and 5173' || echo 'No processes running on ports 3001 or 5173'",
-    "dev:fresh": "bun run kill; sleep 1; rm -f data/fitness.db data/fitness.db-wal data/fitness.db-shm && bun run dev",
-    "db:reset": "rm -f data/fitness.db data/fitness.db-wal data/fitness.db-shm",
+    "dev:fresh": "bun run kill; sleep 1; rm -f api/data/fitness.db api/data/fitness.db-wal api/data/fitness.db-shm && bun run dev",
+    "db:reset": "rm -f api/data/fitness.db api/data/fitness.db-wal api/data/fitness.db-shm",
     "db:generate": "bun run --filter api db:generate",
     "db:migrate": "bun run --filter api db:migrate"
   }
