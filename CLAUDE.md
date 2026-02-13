@@ -19,7 +19,7 @@ Big Vibes is a fitness & diet tracker — a full-stack monorepo with a Bun API b
 ```bash
 bun install          # Install dependencies
 bun run dev          # Run API + Web in parallel
-bun run dev:api      # API only (localhost:3000)
+bun run dev:api      # API only (localhost:3001)
 bun run dev:web      # Web only (localhost:5173)
 bun run db:generate  # Generate Drizzle migrations after schema changes
 bun run db:migrate   # Run migrations
@@ -62,7 +62,7 @@ shared/
 ### Frontend
 - Vue 3 Composition API with `<script setup>` — no Options API
 - Pinia stores handle CRUD + state; composables for cross-cutting concerns
-- `useApi()` composable wraps fetch; Vite proxies `/api` and `/ws` to localhost:3000
+- `useApi()` composable wraps fetch; Vite proxies `/api` and `/ws` to localhost:3001
 - Tailwind utility classes only — no scoped/component CSS
 - Radix Vue for accessible headless UI primitives
 - date-fns for date formatting

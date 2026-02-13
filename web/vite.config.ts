@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "node:url";
+import { API_PORT } from "../shared/config";
 
 export default defineConfig({
   plugins: [vue()],
@@ -13,11 +14,11 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000",
+        target: `http://localhost:${API_PORT}`,
         changeOrigin: true,
       },
       "/ws": {
-        target: "ws://localhost:3000",
+        target: `ws://localhost:${API_PORT}`,
         ws: true,
       },
     },

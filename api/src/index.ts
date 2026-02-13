@@ -1,3 +1,4 @@
+import { API_PORT } from "shared/config";
 import { Router, json } from "./router";
 import { handleWsOpen, handleWsClose, handleWsMessage } from "./ws";
 import { registerExerciseRoutes } from "./routes/exercises";
@@ -18,7 +19,7 @@ registerProgramRoutes(router);
 registerSettingsRoutes(router);
 
 const server = Bun.serve({
-  port: 3000,
+  port: API_PORT,
   fetch(req, server) {
     const url = new URL(req.url);
 
