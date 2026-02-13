@@ -77,6 +77,12 @@ shared/
 - Path aliases: `@/*` → `web/src/*`, `shared` → shared package
 - All API contracts defined in `shared/types.ts` — keep API and frontend in sync
 
+## Development Workflow
+
+- The user runs `bun run dev` themselves — do NOT start or restart dev servers.
+- Both API (Bun `--hot`) and frontend (Vite HMR) hot-reload on file changes, so edits take effect immediately.
+- Auto-seed: On API startup, if the DB is empty, test data is seeded automatically (`api/src/seed.ts`).
+
 ## Code Style
 
 - Feature-based file organization (not layer-based)

@@ -1,4 +1,3 @@
-import { eq } from "drizzle-orm";
 import { db } from "./db";
 import { exercises, workoutSessions, workoutSets, meals, bodyLogs } from "./db/schema";
 
@@ -111,9 +110,18 @@ export function seedIfEmpty() {
   ];
 
   for (const workout of workoutData) {
+    const startedAt = new Date();
+    startedAt.setDate(startedAt.getDate() - workout.daysAgo);
+    startedAt.setHours(17, 0, 0, 0);
+    const finishedAt = new Date(startedAt.getTime() + 60 * 60 * 1000);
+
     const session = db
       .insert(workoutSessions)
-      .values({ name: workout.name })
+      .values({
+        name: workout.name,
+        startedAt: startedAt.toISOString(),
+        finishedAt: finishedAt.toISOString(),
+      })
       .returning()
       .get();
 
@@ -133,10 +141,6 @@ export function seedIfEmpty() {
       }
     }
 
-    db.update(workoutSessions)
-      .set({ finishedAt: new Date().toISOString() })
-      .where(eq(workoutSessions.id, session.id))
-      .run();
   }
 
   // ── Meals ──
