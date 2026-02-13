@@ -6,6 +6,8 @@
     "dev": "bun run --filter '*' dev",
     "dev:api": "bun run --filter api dev",
     "dev:web": "bun run --filter web dev",
+    "dev:fresh": "rm -f data/fitness.db data/fitness.db-wal data/fitness.db-shm && bun run dev",
+    "db:reset": "rm -f data/fitness.db data/fitness.db-wal data/fitness.db-shm",
     "db:generate": "bun run --filter api db:generate",
     "db:migrate": "bun run --filter api db:migrate"
   }

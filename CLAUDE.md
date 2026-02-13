@@ -21,6 +21,8 @@ bun install          # Install dependencies
 bun run dev          # Run API + Web in parallel
 bun run dev:api      # API only (localhost:3001)
 bun run dev:web      # Web only (localhost:5173)
+bun run dev:fresh    # Clear DB + run dev (re-seeds test data)
+bun run db:reset     # Delete the SQLite DB
 bun run db:generate  # Generate Drizzle migrations after schema changes
 bun run db:migrate   # Run migrations
 cd web && bun run build  # Build frontend
