@@ -1,5 +1,6 @@
 import { API_PORT } from "shared/config";
 import { Router, json } from "./router";
+import { seedIfEmpty } from "./seed";
 import { handleWsOpen, handleWsClose, handleWsMessage } from "./ws";
 import { registerExerciseRoutes } from "./routes/exercises";
 import { registerWorkoutRoutes } from "./routes/workouts";
@@ -81,5 +82,7 @@ function addCorsHeaders(response: Response): Response {
   );
   return response;
 }
+
+seedIfEmpty();
 
 console.log(`Fitness tracker API running on http://localhost:${server.port}`);
