@@ -77,6 +77,9 @@ shared/
 - Path aliases: `@/*` → `web/src/*`, `shared` → shared package
 - All API contracts defined in `shared/types.ts` — keep API and frontend in sync
 
+## Git
+- Use `git add .` when staging, unless told otherwise.
+
 ## Development Workflow
 
 - The user runs `bun run dev` themselves — do NOT start or restart dev servers.
